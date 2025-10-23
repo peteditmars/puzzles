@@ -80,7 +80,6 @@ def findMaxValue(arr, leftmost, rightmost):
                 max_index = left
                 max_value = arr[left]
             break
-        # normally in a sorted-ascending array we would move left to continue the search .. but..
         # this is an array with a "peak" (sorted ascending then descending)
         # test to left of max_index to see if array is ascending
         if possible_max_index != 0 and arr[possible_max_index - 1] > arr[possible_max_index]:

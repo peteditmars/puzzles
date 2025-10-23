@@ -51,10 +51,6 @@ ga4 = generate_array(10000000, 5023000)
 
 tests = [ga1, ga2, ga3, ga4]
 
-global ans
-
-ans = 0
-
 def findMaxValue(arr, leftmost, rightmost):
     '''
     Find the max value within the designated portion of array
@@ -101,7 +97,7 @@ def findMaxValue(arr, leftmost, rightmost):
 def findMaxValueThreaded(arr, num_threads, subprocesses=False):
     '''
     Find max value in array that has ascending and descending portions by breaking work into chunks
-    and using threading to execute in parallel
+    and using threading or subprocess/multiprocessing to execute in parallel
 
     :param arr: array to search
     :param num_threads: number of threads to use

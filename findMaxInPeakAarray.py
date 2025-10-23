@@ -163,8 +163,8 @@ crv = CaptureReturnValue(findMaxValueThreaded)
 
 num_threads_list = [1]
 for num_threads in num_threads_list:
-    for test in tests:
-        for subprocesses in [True, False]:
+    for subprocesses in [False, True]:
+        for test in tests:
             elapsed = timeit.timeit(lambda: crv(test, num_threads, subprocesses), globals=globals(), number=10)
             pool_type = "subprocesses" if subprocesses else "threads"
             print(f"elapsed time = {elapsed:.6f}  {num_threads} {pool_type} array size={len(test)} ans={crv.return_value}")
